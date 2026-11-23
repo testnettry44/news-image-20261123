@@ -320,7 +320,10 @@ def motif_ukraine(p, px, py):
     bars = [(924, 500, 12), (946, 492, 20), (968, 484, 28)]
     for bx, top, hgt in bars:
         p.fill_rect(bx, top, 16, hgt, INK)
-    p.fill_circle(976, 480, 4, RED)  # survivor dot, sitting on tallest bar
+    # Survivor dot, on the tallest bar and inside the motif envelope
+    # (panel-top +14..+42 = y 484..512): centre 489 keeps its top at
+    # +15, 1 px clear of the envelope top. (Was 480: top at +6.)
+    p.fill_circle(976, 489, 4, RED)
 
 
 def motif_nato(p, px, py):
